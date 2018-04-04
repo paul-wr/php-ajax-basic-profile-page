@@ -1,0 +1,68 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Forms</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+  <style type="text/css">
+    body {
+      font-family: 'Roboto Condensed', sans-serif;
+    }
+
+    #demo {
+      width: 340px;
+    }
+    .img-responsive {
+      max-width: 100%;
+      border-radius: 2px;      
+    }
+    form input, button {
+      background-color: #021852;
+      color: #fff;
+      padding: 7px;
+      outline: none;
+      border-radius: 2px;
+    }
+
+    input[type=file] {
+      width: 200px;
+    }
+    input[type=submit] {
+      height: 33px;
+    }
+    #description-display {
+      font-size: 14px;
+    }
+    #btnDesc, #description {
+      display: none;
+    }
+
+
+  </style>	
+</head>
+	
+<body onload="loadImg()">
+<h1>Profile</h1>
+<div id="demo"><img id="img" src="./img/profile.png" />
+</div>
+<br />
+<br />
+<form action="http://localhost:8879/profile/process-ajax.php" method="post" enctype="multipart/form-data">
+  <input type="file" name="file" id="file" accept="image/*" />
+  <input type="submit" name="submit" value="Set profile image">
+</form>  
+ 
+
+<br/>
+<h2>Description</h2>
+<div id="description-display"></div>
+<textarea id="description">
+</textarea><br/><br/>
+<button id="btnDesc" onclick="setDescription()">Set Description</button>
+<button id="showDesc" onclick="showDescription()">Set Description</button>
+
+
+
+<script type="text/javascript" src="js/index.js"></script>
+
+</body>
+</html>
